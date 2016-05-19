@@ -49,7 +49,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\DbFactory.cs" />
+    <Compile Include="Infrastructure\Disposable.cs" />
+    <Compile Include="Infrastructure\IDbFactory.cs" />
+    <Compile Include="Infrastructure\IRepository.cs" />
+    <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\RepositoryBase.cs" />
+    <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="LearnMVCDbContext.cs" />
+    <Compile Include="Migrations\201605190705380_InitialDB.cs" />
+    <Compile Include="Migrations\201605190705380_InitialDB.Designer.cs">
+      <DependentUpon>201605190705380_InitialDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ProductCategoryRepository.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -60,6 +75,15 @@
       <Project>{07a960ab-eb9e-49ab-a78e-ba7e3053a95f}</Project>
       <Name>LearnMVC.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LearnMVC.Model\LearnMVC.Model.csproj">
+      <Project>{40c594f9-cf36-4ab3-ab2f-eafa0cadb5d0}</Project>
+      <Name>LearnMVC.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605190705380_InitialDB.resx">
+      <DependentUpon>201605190705380_InitialDB.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
