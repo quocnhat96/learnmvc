@@ -16,8 +16,9 @@ namespace LearnMVC.Service
         void Detele(int id);
         IEnumerable<Post> GetAll();
         IEnumerable<Post> GetAllPaging(int page, int pageSize, out int totalRow);
+        IEnumerable<Post> GetAllByCategoryPagin(int categoryId, int page, int pageSize, out int totalRow);
         Post GetById(int id);
-        IEnumerable<Post> GetAllByTagPaging(int page, int pageSize, out int totalRow);
+        IEnumerable<Post> GetAllByTagPaging(string tag, int page, int pageSize, out int totalRow);
         void SaveChanges();
     }
     public class PostService : IPostService
@@ -45,9 +46,14 @@ namespace LearnMVC.Service
             return _postReponsitory.GetAll(new string[] { "PostCategory" });
         }
 
-        public IEnumerable<Post> GetAllByTagPaging(int page, int pageSize, out int totalRow)
+        public IEnumerable<Post> GetAllByCategoryPagin(int categoryId, int page, int pageSize, out int totalRow)
         {
-            return _postReponsitory.GetMultiPaging(x=>x.Status, out totalRow, page, pageSize );
+            return _postReponsitory.GetMultiPaging(x => x.Status && x.CategoryID == categoryId, out totalRow, page, pageSize, new string[] { "PostCategory" });
+        }
+
+        public IEnumerable<Post> GetAllByTagPaging(string tag, int page, int pageSize, out int totalRow)
+        {
+            return _postReponsitory.GetAllByTag(tag, page, pageSize, out totalRow);
         }
 
         public IEnumerable<Post> GetAllPaging(int page, int pageSize, out int totalRow)
