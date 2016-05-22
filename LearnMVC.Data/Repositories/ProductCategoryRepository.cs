@@ -8,7 +8,7 @@ using LearnMVC.Model.Models;
 
 namespace LearnMVC.Data.Repositories
 {
-    public interface IProductCategoryRepository
+    public interface IProductCategoryRepository : IRepository<ProductCategory>
     {
         IEnumerable<ProductCategory> GetByAlias(string alias);
     }

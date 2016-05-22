@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LearnMVC.Data.Repositories
 {
-    public interface IOrderDetailRepository 
+    public interface IOrderDetailRepository : IRepository<OrderDetail>
     {
     }
 
