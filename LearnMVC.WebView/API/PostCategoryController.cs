@@ -11,7 +11,7 @@ namespace LearnMVC.WebView.API
     public class PostCategoryController : ApiControllerBase
     {
         IPostCategoryService _postCategoryService;
-        public PostCategoryController(IErrorService errorService, IPostCategoryService postCategoryService) 
+        public PostCategoryController(IErrorService errorService, IPostCategoryService postCategoryService)
             : base(errorService)
         {
             this._postCategoryService = postCategoryService;
@@ -25,7 +25,6 @@ namespace LearnMVC.WebView.API
                 var listCategory = _postCategoryService.GetAll();
 
                 HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, listCategory);
-
 
                 return response;
             });
