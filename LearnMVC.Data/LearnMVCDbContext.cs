@@ -35,6 +35,8 @@ namespace LearnMVC.Data
         public DbSet<Tag> Tags { get; set; }
         public DbSet<VisitorStatistic> VistorStatistics { get; set; }
 
+        public DbSet<Error> Errors { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder builder)
         {
             
