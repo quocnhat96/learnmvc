@@ -13,4 +13,3 @@ namespace LearnMVC.WebView.Models
         public virtual TagViewModel Tag { set; get; }
     }
 }
-}

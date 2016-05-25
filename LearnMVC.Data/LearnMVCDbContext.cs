@@ -1,4 +1,5 @@
 ﻿using LearnMVC.Model.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LearnMVC.Data
 {
-    public class LearnMVCDbContext : DbContext
+    public class LearnMVCDbContext : IdentityDbContext<ApplicationUser>
     {
         public LearnMVCDbContext() : base("LearnMVCConnecttion")
         {
@@ -37,9 +38,15 @@ namespace LearnMVC.Data
 
         public DbSet<Error> Errors { get; set; }
 
+        public static LearnMVCDbContext Create()
+        {
+            return new LearnMVCDbContext();
+        }
         protected override void OnModelCreating(DbModelBuilder builder)
         {
-            
+            builder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId });
+            builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId);
+
         }
     }
 }
