@@ -5,14 +5,16 @@
 
 <!DOCTYPE html>
 
-<html ng-app>
+<html ng-app="myModule">
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>Index</title>    
     <script src="~/Scripts/Plugins/angular/angular.js"></script>
+    <script src="~/Scripts/Spa/app.js"></script>
 </head>
 <body>
-    <div> 
+    <div ng-controller="myController"> 
+        {{message}}
     </div>
 </body>
 </html>

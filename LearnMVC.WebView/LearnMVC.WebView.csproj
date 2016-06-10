@@ -236,6 +236,7 @@
     <Content Include="Scripts\Plugins\angular\index.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Spa\app.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -245,7 +246,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Scripts\Plugins\angular\.bower.json" />
     <Content Include="Scripts\Plugins\angular\angular.min.js.gzip" />
     <Content Include="Scripts\Plugins\angular\angular.min.js.map" />
@@ -253,6 +253,7 @@
     <Content Include="Scripts\Plugins\angular\package.json" />
     <Content Include="Scripts\Plugins\angular\README.md" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Controllers\" />
@@ -260,7 +261,6 @@
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Assets\Admin\" />
     <Folder Include="Assets\Clients\" />
-    <Folder Include="Scripts\Spa\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
