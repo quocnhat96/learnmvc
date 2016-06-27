@@ -8,12 +8,16 @@
 <html ng-app="myModule">
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>    
+    <title>Index</title>
     <script src="~/Scripts/Plugins/angular/angular.js"></script>
     <script src="~/Scripts/Spa/app.js"></script>
 </head>
 <body>
-    <div ng-controller="myController"> 
+    <div ng-controller="myController">
+        <div learn-Directive></div>
+        <input type="number" ng-model="number" /> Value of textBox: {{number}}
+        <button ng-click="checkNumber()">Check Number</button>
+        <br />
         {{message}}
     </div>
 </body>
