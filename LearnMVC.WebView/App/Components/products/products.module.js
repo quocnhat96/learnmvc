@@ -13,6 +13,6 @@
             url: "/products_add",
             templateUrl: "/App/Components/products/productAddView.html",
             controller: "productAddController"
-    })
+        })
     }
 })();
